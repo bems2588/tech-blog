@@ -11,10 +11,10 @@
 
 <body>
   <header>
-    <h1>Welcome to the Four Seasons Museum</h1>
+    <h1>Welcome to our Tech-Blog</h1>
   </header>
   <nav>
-    <a href="/">Home</a>
+    <a href="/"><Tech-Blog></Tech-Blog></a>
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
     {{else}}
@@ -23,9 +23,9 @@
   </nav>
   <main>
     <aside>
-      <h2>Enjoy the galleries!</h2>
+      <h2>Enjoy the conversation!</h2>
     </aside>
-    <div class="gallery">
+    <div class="display-post">
       {{{body}}}
     </div>
   </main>
