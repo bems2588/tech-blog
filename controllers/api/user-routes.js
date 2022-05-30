@@ -12,6 +12,8 @@ router.post('/', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.email = dbUserData.email;
+      req.session.username = dbUserData.username;
 
       res.status(200).json(dbUserData);
     });
@@ -24,6 +26,7 @@ router.post('/', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
+    console.log(req.body);
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
@@ -48,7 +51,8 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
+      req.session.email = dbUserData.email;
+      req.session.username = dbUserData.username;
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
