@@ -24,6 +24,14 @@ Post.init(
       allowNull: false,
       default: Date.now
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+
   },
   {
     sequelize,
