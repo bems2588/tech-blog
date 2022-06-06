@@ -1,3 +1,6 @@
 {{#each postRecords as |post|}}
 {{> post-details}}
 {{/each}}
+{{#if loggedIn}}
+{{>post}}
+{{/if}}
